@@ -14,14 +14,14 @@ export default defineComponent({
   setup(props) {
     const { numberString } = toRefs(props);
     return () => (
-      <div className={style.numberDisplay}>
+      <div class={style.numberDisplay}>
         {numberString.value.split("").map((digit, i) =>
           numReg.test(digit) ? (
-            <div className={style.wrap} key={i}>
+            <div class={style.wrap} key={i}>
               {numbers.map((item, index) => (
                 <div
                   key={index}
-                  className={style.numberItem}
+                  class={style.numberItem}
                   style={{
                     transform: `translate(-50%, -${Number(digit) * 30}px)`,
                   }}
@@ -31,8 +31,8 @@ export default defineComponent({
               ))}
             </div>
           ) : (
-            <div className={style.wrap} key={i}>
-              <div className={style.splitItem}>{digit}</div>
+            <div class={style.wrap} key={i}>
+              <div class={style.splitItem}>{digit}</div>
             </div>
           )
         )}

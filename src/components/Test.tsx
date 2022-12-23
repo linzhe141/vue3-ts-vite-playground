@@ -8,7 +8,7 @@ import Child from "./Child";
 export default defineComponent({
   name: "Test",
   setup() {
-    const numberString = ref("123");
+    const numberString = ref("990");
     const time = ref(Date.now());
     onMounted(() => {
       setInterval(() => {
