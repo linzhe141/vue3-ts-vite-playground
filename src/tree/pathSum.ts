@@ -1,23 +1,15 @@
-class TreeNode {
-  constructor(val: number) {
-    this.val = val;
-    this.left = this.right = null;
-  }
-  val = 0;
-  left: TreeNode = null;
-  right: TreeNode = null;
-}
+import { TreeNode } from "@/types/binaryTreeNode";
 
 function init() {
-  var root = new TreeNode(5);
-  var node1 = new TreeNode(4);
-  var node2 = new TreeNode(8);
-  var node3 = new TreeNode(11);
-  var node4 = new TreeNode(13);
-  var node5 = new TreeNode(4);
-  var node6 = new TreeNode(7);
-  var node7 = new TreeNode(2);
-  var node8 = new TreeNode(1);
+  const root = new TreeNode(5);
+  const node1 = new TreeNode(4);
+  const node2 = new TreeNode(8);
+  const node3 = new TreeNode(11);
+  const node4 = new TreeNode(13);
+  const node5 = new TreeNode(4);
+  const node6 = new TreeNode(7);
+  const node7 = new TreeNode(2);
+  const node8 = new TreeNode(1);
   root.left = node1;
   root.right = node2;
   node1.left = node3;
@@ -28,9 +20,9 @@ function init() {
   node5.right = node8;
   return root;
 }
-var root = init();
+const root = init();
 
-var hasPathSum = function (root: TreeNode, targetSum: number) {
+const hasPathSum = function (root: TreeNode, targetSum: number) {
   if (root === null) return false;
   return dfs(root, targetSum);
 };

@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import SvgIcon from "./components/svgIcon/index.vue";
 import Test from "./components/Test";
-import { result } from "./tree/pathSum";
-console.log(result);
+// import { result } from "./tree/pathSum";
+// import "./tree/isSameTree";
+import "./tree/isSymmetric";
+// console.log(result);
 </script>
 <template>
   <p>伪元素svg</p>
