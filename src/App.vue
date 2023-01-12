@@ -4,7 +4,8 @@ import Test from "./components/Test";
 // import { result } from "./tree/pathSum";
 // import "./tree/isSameTree";
 // import "./tree/isSymmetric";
-import "./leetcode/tree/maxDepth";
+// import "./leetcode/tree/maxDepth";
+import "./leetcode/linkedList/addTwoNumbers";
 // console.log(result);
 </script>
 <template>
