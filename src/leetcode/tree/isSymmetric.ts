@@ -30,7 +30,7 @@ const root = init();
 function isSymmetric(root: TreeNode): boolean {
   return dfs(root, root);
 }
-function dfs(p: TreeNode, q: TreeNode): boolean {
+function dfs(p: TreeNode | null, q: TreeNode | null): boolean {
   if (p === null && q === null) return true;
   if (p === null && q !== null) return false;
   if (p !== null && q === null) return false;
@@ -38,5 +38,6 @@ function dfs(p: TreeNode, q: TreeNode): boolean {
   if (p !== null && q !== null && p.val === q.val) {
     return dfs(p.left, q.right) && dfs(p.right, q.left);
   }
+  return false;
 }
 console.log(isSymmetric(root));

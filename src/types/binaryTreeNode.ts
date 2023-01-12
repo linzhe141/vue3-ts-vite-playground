@@ -4,6 +4,6 @@ export class TreeNode {
     this.left = this.right = null;
   }
   val: number;
-  left: TreeNode;
-  right: TreeNode;
+  left: TreeNode | null;
+  right: TreeNode | null;
 }

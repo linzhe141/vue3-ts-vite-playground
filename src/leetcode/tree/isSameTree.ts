@@ -15,7 +15,7 @@ function init() {
   return [root1, root2];
 }
 const [root1, root2] = init();
-const isSameTree = function (p: TreeNode, q: TreeNode): boolean {
+const isSameTree = function (p: TreeNode | null, q: TreeNode | null): boolean {
   if (p === null && q === null) return true;
   if (p === null && q !== null) return false;
   if (p !== null && q === null) return false;
@@ -23,6 +23,7 @@ const isSameTree = function (p: TreeNode, q: TreeNode): boolean {
   if (p !== null && q !== null && p.val === q.val) {
     return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
   }
+  return false;
 };
 isSameTree(root1, root2);
 export default {};
