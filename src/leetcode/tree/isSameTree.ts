@@ -1,3 +1,4 @@
+// [100] 相同的树
 import { TreeNode } from "@/types/binaryTreeNode";
 
 function init() {

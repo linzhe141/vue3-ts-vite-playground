@@ -5,7 +5,8 @@ import Test from "./components/Test";
 // import "./leetcode/tree/isSameTree";
 // import "./leetcode/tree/isSymmetric";
 // import "./leetcode/tree/maxDepth";
-import "./leetcode/linkedList/addTwoNumbers";
+// import "./leetcode/linkedList/addTwoNumbers";
+import "./leetcode/stack/isValid";
 </script>
 <template>
   <div>==</div>

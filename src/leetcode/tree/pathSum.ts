@@ -1,3 +1,4 @@
+// [112] 路径总和
 import { TreeNode } from "@/types/binaryTreeNode";
 
 function init() {

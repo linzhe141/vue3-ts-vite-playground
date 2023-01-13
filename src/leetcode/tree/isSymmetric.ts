@@ -1,3 +1,4 @@
+// [101] 对称二叉树
 import { TreeNode } from "@/types/binaryTreeNode";
 function init() {
   const root = new TreeNode(1);

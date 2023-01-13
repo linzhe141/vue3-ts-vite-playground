@@ -1,3 +1,4 @@
+// [2] 两数相加
 import { ListNode } from "@/types/ListNode";
 function init() {
   // const l1 = new ListNode(2, new ListNode(4, new ListNode(3, new ListNode(1))));
