@@ -10,21 +10,6 @@ function init() {
   root.right = node2;
   node1.left = node3;
   node2.right = node4;
-  /* 
-  dfs
-  queue = [1]
-  item = 1
-  queue = [2,2]
-  item = 2
-  queue = [2,3]
-  item = 2 
-  queue = [3,3]
-        1
-       / \
-      2   2
-     /     \         
-    3       3
-  */
   return root;
 }
 const root = init();
