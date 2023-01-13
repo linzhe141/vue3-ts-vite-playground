@@ -1,7 +1,20 @@
 import { ListNode } from "@/types/ListNode";
 function init() {
-  const l1 = new ListNode(2, new ListNode(4, new ListNode(3, new ListNode(1))));
-  const l2 = new ListNode(5, new ListNode(6, new ListNode(4)));
+  // const l1 = new ListNode(2, new ListNode(4, new ListNode(3, new ListNode(1))));
+  // const l2 = new ListNode(5, new ListNode(6, new ListNode(4)));
+  // const l1 = new ListNode(
+  //   9,
+  //   new ListNode(
+  //     9,
+  //     new ListNode(
+  //       9,
+  //       new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9))))
+  //     )
+  //   )
+  // );
+  // const l2 = new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9))));
+  const l1 = new ListNode(5);
+  const l2 = new ListNode(5);
   return [l1, l2];
 }
 const [l1, l2] = init();
@@ -9,8 +22,9 @@ const addTwoNumbers = (
   l1: ListNode | null,
   l2: ListNode | null
 ): ListNode | null => {
-  const result = new ListNode();
-  let head = result;
+  let result = new ListNode();
+  let head = null;
+  let current = null;
   let l1Index: ListNode | null = l1;
   let l2Index: ListNode | null = l2;
   let tenFalg = false;
@@ -77,11 +91,23 @@ const addTwoNumbers = (
     else l1Index = null;
     if (l2Index?.next) l2Index = l2Index.next;
     else l2Index = null;
-    while (true) {
-      if (head.next === null) break;
-      head = head.next;
+    if (head === null) {
+      result = resultNode;
+      head = result;
+      current = head;
+    } else {
+      current = head;
+      while (current.next) {
+        current = current.next;
+      }
+      current.next = resultNode;
     }
-    head.next = resultNode;
+  }
+  if (tenFalg && current) {
+    while (current.next) {
+      current = current.next;
+    }
+    current.next = new ListNode(1);
   }
   return result;
 };
