@@ -26,4 +26,3 @@ const isSameTree = function (p: TreeNode | null, q: TreeNode | null): boolean {
   return false;
 };
 isSameTree(root1, root2);
-export default {};

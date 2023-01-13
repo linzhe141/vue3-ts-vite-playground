@@ -43,5 +43,4 @@ const dfs = (node: TreeNode, target: number): boolean => {
   return false;
 };
 
-// console.log(hasPathSum(root, 22));
-export const result = hasPathSum(root, 22);
+console.log(hasPathSum(root, 22));

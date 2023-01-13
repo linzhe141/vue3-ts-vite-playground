@@ -1,12 +1,11 @@
 <script setup lang="ts">
 import SvgIcon from "./components/svgIcon/index.vue";
 import Test from "./components/Test";
-// import { result } from "./tree/pathSum";
-// import "./tree/isSameTree";
-// import "./tree/isSymmetric";
+// import "./leetcode/tree/pathSum";
+// import "./leetcode/tree/isSameTree";
+// import "./leetcode/tree/isSymmetric";
 // import "./leetcode/tree/maxDepth";
 import "./leetcode/linkedList/addTwoNumbers";
-// console.log(result);
 </script>
 <template>
   <div>==</div>
