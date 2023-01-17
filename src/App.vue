@@ -9,7 +9,8 @@ import Test from "./components/Test";
 // import "./leetcode/stack/isValid";
 // import "./leetcode/tree/bfs";
 // import "./leetcode/linkedList/reverseList";
-import "./leetcode/hashTable/twoSum";
+// import "./leetcode/hashTable/twoSum";
+import "./leetcode/twoPointers/removeDuplicates";
 </script>
 <template>
   <div>==</div>
