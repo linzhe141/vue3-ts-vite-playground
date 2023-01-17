@@ -5,6 +5,7 @@ specifiers:
   '@vitejs/plugin-vue-jsx': ^3.0.0
   dayjs: ^1.11.7
   fast-glob: 3.x
+  prettier: ^2.8.3
   sass: ^1.57.1
   typescript: ^4.6.4
   typescript-plugin-css-modules: ^4.1.1
@@ -23,6 +24,7 @@ dependencies:
 devDependencies:
   '@vitejs/plugin-vue': 3.2.0_vite@3.2.5+vue@3.2.45
   fast-glob: 3.2.12
+  prettier: 2.8.3
   typescript: 4.9.4
   vite: 3.2.5_sass@1.57.1
   vite-plugin-svg-icons: 2.0.1_vite@3.2.5
@@ -2121,6 +2123,12 @@ packages:
     dependencies:
       posthtml-parser: 0.2.1
       posthtml-render: 1.4.0
+    dev: true
+
+  /prettier/2.8.3:
+    resolution: {integrity: sha512-tJ/oJ4amDihPoufT5sM0Z1SKEuKay8LfVAMlbbhnnkvt6BUserZylqo2PN+p9KeljLr0OHa2rXHU1T8reeoTrw==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
     dev: true
 
   /prr/1.0.1:

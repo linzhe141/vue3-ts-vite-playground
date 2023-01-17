@@ -2,7 +2,7 @@
 console.log(isValid("({[]([[()]()])})"));
 function isValid(s: string): boolean {
   const stack: string[] = [];
-  const map = new Map();
+  const map = new Map<string, string>();
   map.set("{", "}");
   map.set("[", "]");
   map.set("(", ")");

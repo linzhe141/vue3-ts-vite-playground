@@ -8,7 +8,8 @@ import Test from "./components/Test";
 // import "./leetcode/linkedList/addTwoNumbers";
 // import "./leetcode/stack/isValid";
 // import "./leetcode/tree/bfs";
-import "./leetcode/linkedList/reverseList";
+// import "./leetcode/linkedList/reverseList";
+import "./leetcode/hashTable/twoSum";
 </script>
 <template>
   <div>==</div>
