@@ -7,7 +7,8 @@ import Test from "./components/Test";
 // import "./leetcode/tree/maxDepth";
 // import "./leetcode/linkedList/addTwoNumbers";
 // import "./leetcode/stack/isValid";
-import "./leetcode/tree/bfs";
+// import "./leetcode/tree/bfs";
+import "./leetcode/linkedList/reverseList";
 </script>
 <template>
   <div>==</div>

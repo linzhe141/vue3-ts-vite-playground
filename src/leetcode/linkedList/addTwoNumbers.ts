@@ -27,27 +27,27 @@ function addTwoNumbers(
   let current = null;
   let l1Index: ListNode | null = l1;
   let l2Index: ListNode | null = l2;
-  let tenFalg = 0;
+  let tenFlag = 0;
   while (l1Index || l2Index) {
     let node: ListNode = new ListNode();
     const temp1 = l1Index ?? new ListNode();
     const temp2 = l2Index ?? new ListNode();
     const timeVal = temp1.val + temp2.val;
-    if (!tenFalg) {
+    if (!tenFlag) {
       if (timeVal < 10) {
         node.val = timeVal;
-        tenFalg = 0;
+        tenFlag = 0;
       } else {
         node.val = timeVal % 10;
-        tenFalg = 1;
+        tenFlag = 1;
       }
     } else {
       if (timeVal + 1 < 10) {
         node.val = timeVal + 1;
-        tenFalg = 0;
+        tenFlag = 0;
       } else {
         node.val = (timeVal + 1) % 10;
-        tenFalg = 1;
+        tenFlag = 1;
       }
     }
     if (l1Index?.next) l1Index = l1Index.next;
@@ -64,7 +64,7 @@ function addTwoNumbers(
       }
     }
   }
-  if (tenFalg && current) {
+  if (tenFlag && current) {
     current.next = new ListNode(1);
   }
   return result;
