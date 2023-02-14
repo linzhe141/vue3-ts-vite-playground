@@ -1,88 +1,72 @@
+// [2] 两数相加
 import { ListNode } from "@/types/ListNode";
 function init() {
-  const l1 = new ListNode(2, new ListNode(4, new ListNode(3, new ListNode(1))));
-  const l2 = new ListNode(5, new ListNode(6, new ListNode(4)));
+  // const l1 = new ListNode(2, new ListNode(4, new ListNode(3, new ListNode(1))));
+  // const l2 = new ListNode(5, new ListNode(6, new ListNode(4)));
+  const l1 = new ListNode(
+    9,
+    new ListNode(
+      9,
+      new ListNode(
+        9,
+        new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9))))
+      )
+    )
+  );
+  const l2 = new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9))));
+  // const l1 = new ListNode(5);
+  // const l2 = new ListNode(5);
   return [l1, l2];
 }
 const [l1, l2] = init();
-const addTwoNumbers = (
+function addTwoNumbers(
   l1: ListNode | null,
   l2: ListNode | null
-): ListNode | null => {
-  const result = new ListNode();
-  let head = result;
+): ListNode | null {
+  let result = new ListNode();
+  let current = null;
   let l1Index: ListNode | null = l1;
   let l2Index: ListNode | null = l2;
-  let tenFalg = false;
+  let tenFlag = 0;
   while (l1Index || l2Index) {
-    let resultNode: ListNode = new ListNode();
-    if (l1Index && l2Index) {
-      if (!tenFalg) {
-        if (l1Index.val + l2Index.val < 10) {
-          resultNode.val = l1Index.val + l2Index.val;
-          tenFalg = false;
-        } else {
-          resultNode.val = (l1Index.val + l2Index.val) % 10;
-          tenFalg = true;
-        }
+    let node: ListNode = new ListNode();
+    const temp1 = l1Index ?? new ListNode();
+    const temp2 = l2Index ?? new ListNode();
+    const timeVal = temp1.val + temp2.val;
+    if (!tenFlag) {
+      if (timeVal < 10) {
+        node.val = timeVal;
+        tenFlag = 0;
       } else {
-        if (l1Index.val + l2Index.val + 1 < 10) {
-          resultNode.val = l1Index.val + l2Index.val + 1;
-          tenFalg = false;
-        } else {
-          resultNode.val = (l1Index.val + l2Index.val + 1) % 10;
-          tenFalg = true;
-        }
+        node.val = timeVal % 10;
+        tenFlag = 1;
       }
-    }
-    if (l1Index && !l2Index) {
-      if (!tenFalg) {
-        if (l1Index.val < 10) {
-          resultNode.val = l1Index.val;
-          tenFalg = false;
-        } else {
-          resultNode.val = l1Index.val % 10;
-          tenFalg = true;
-        }
+    } else {
+      if (timeVal + 1 < 10) {
+        node.val = timeVal + 1;
+        tenFlag = 0;
       } else {
-        if (l1Index.val + 1 < 10) {
-          resultNode.val = l1Index.val + 1;
-          tenFalg = false;
-        } else {
-          resultNode.val = (l1Index.val + 1) % 10;
-          tenFalg = true;
-        }
-      }
-    }
-    if (!l1Index && l2Index) {
-      if (!tenFalg) {
-        if (l2Index.val < 10) {
-          resultNode.val = l2Index.val;
-          tenFalg = false;
-        } else {
-          resultNode.val = l2Index.val % 10;
-          tenFalg = true;
-        }
-      } else {
-        if (l2Index.val + 1 < 10) {
-          resultNode.val = l2Index.val + 1;
-          tenFalg = false;
-        } else {
-          resultNode.val = (l2Index.val + 1) % 10;
-          tenFalg = true;
-        }
+        node.val = (timeVal + 1) % 10;
+        tenFlag = 1;
       }
     }
     if (l1Index?.next) l1Index = l1Index.next;
     else l1Index = null;
     if (l2Index?.next) l2Index = l2Index.next;
     else l2Index = null;
-    while (true) {
-      if (head.next === null) break;
-      head = head.next;
+    if (current === null) {
+      result = node;
+      current = result;
+    } else {
+      if (current) {
+        current.next = node;
+        current = current.next;
+      }
     }
-    head.next = resultNode;
+  }
+  if (tenFlag && current) {
+    current.next = new ListNode(1);
   }
   return result;
-};
+}
 console.log(addTwoNumbers(l1, l2));

@@ -2,10 +2,16 @@
 import { ref } from "vue";
 import SvgIcon from "./components/svgIcon/index.vue";
 import Test from "./components/Test";
-// import { result } from "./tree/pathSum";
-// import "./tree/isSameTree";
-// import "./tree/isSymmetric";
+// import "./leetcode/tree/pathSum";
+// import "./leetcode/tree/isSameTree";
+// import "./leetcode/tree/isSymmetric";
 // import "./leetcode/tree/maxDepth";
+// import "./leetcode/linkedList/addTwoNumbers";
+// import "./leetcode/stack/isValid";
+// import "./leetcode/tree/bfs";
+// import "./leetcode/linkedList/reverseList";
+// import "./leetcode/hashTable/twoSum";
+// import "./leetcode/twoPointers/removeDuplicates";
 import "./leetcode/linkedList/addTwoNumbers";
 import { Vue3SeamlessScroll } from "vue3-seamless-scroll";
 const list = ref([
