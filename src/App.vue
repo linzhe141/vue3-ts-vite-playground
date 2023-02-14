@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref } from "vue";
 import SvgIcon from "./components/svgIcon/index.vue";
 import Test from "./components/Test";
 // import { result } from "./tree/pathSum";
@@ -6,6 +7,45 @@ import Test from "./components/Test";
 // import "./tree/isSymmetric";
 // import "./leetcode/tree/maxDepth";
 import "./leetcode/linkedList/addTwoNumbers";
+import { Vue3SeamlessScroll } from "vue3-seamless-scroll";
+const list = ref([
+  {
+    title: "Vue3.0 无缝滚动组件展示数据第1条",
+    date: Date.now(),
+  },
+  {
+    title: "Vue3.0 无缝滚动组件展示数据第2条",
+    date: Date.now(),
+  },
+  {
+    title: "Vue3.0 无缝滚动组件展示数据第3条",
+    date: Date.now(),
+  },
+  {
+    title: "Vue3.0 无缝滚动组件展示数据第4条",
+    date: Date.now(),
+  },
+  {
+    title: "Vue3.0 无缝滚动组件展示数据第5条",
+    date: Date.now(),
+  },
+  {
+    title: "Vue3.0 无缝滚动组件展示数据第6条",
+    date: Date.now(),
+  },
+  {
+    title: "Vue3.0 无缝滚动组件展示数据第7条",
+    date: Date.now(),
+  },
+  {
+    title: "Vue3.0 无缝滚动组件展示数据第8条",
+    date: Date.now(),
+  },
+  {
+    title: "Vue3.0 无缝滚动组件展示数据第9条",
+    date: Date.now(),
+  },
+]);
 // console.log(result);
 </script>
 <template>
@@ -19,6 +59,19 @@ import "./leetcode/linkedList/addTwoNumbers";
   <SvgIcon name="theme" />
   <p>=========</p>
   <Test />
+  <p>=========</p>
+  <vue3-seamless-scroll
+    :list="list"
+    class="scroll"
+    hover
+    :singleHeight="32"
+    :step="4"
+  >
+    <div class="item" v-for="(item, index) in list" :key="index">
+      <span>{{ item.title }}</span>
+      <span>{{ item.date }}</span>
+    </div>
+  </vue3-seamless-scroll>
 </template>
 <style lang="scss" scoped>
 .x:before {
@@ -28,5 +81,18 @@ import "./leetcode/linkedList/addTwoNumbers";
   background-size: 32px 32px;
   height: 32px;
   width: 32px;
+}
+.scroll {
+  height: 270px;
+  width: 500px;
+  margin: 100px auto;
+  overflow: hidden;
+}
+
+.scroll .item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px 0;
 }
 </style>

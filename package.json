@@ -13,7 +13,8 @@
     "dayjs": "^1.11.7",
     "sass": "^1.57.1",
     "typescript-plugin-css-modules": "^4.1.1",
-    "vue": "^3.2.41"
+    "vue": "^3.2.41",
+    "vue3-seamless-scroll": "^2.0.1"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.2.0",
