@@ -11,6 +11,7 @@
   "dependencies": {
     "@vitejs/plugin-vue-jsx": "^3.0.0",
     "dayjs": "^1.11.7",
+    "@linzhe_tools/seamless-scroll": "1.0.4",
     "sass": "^1.57.1",
     "typescript-plugin-css-modules": "^4.1.1",
     "vue": "^3.2.41",
