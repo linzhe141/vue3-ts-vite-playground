@@ -1,13 +1,14 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@linzhe_tools/seamless-scroll': 1.0.4
   '@vitejs/plugin-vue': ^3.2.0
   '@vitejs/plugin-vue-jsx': ^3.0.0
   dayjs: ^1.11.7
   fast-glob: 3.x
+  linzhe_tools: 1.0.23
   prettier: ^2.8.3
   sass: ^1.57.1
+  tsconfig-paths: ^4.2.0
   typescript: ^4.6.4
   typescript-plugin-css-modules: ^4.1.1
   vite: ^3.2.3
@@ -17,9 +18,9 @@ specifiers:
   vue3-seamless-scroll: ^2.0.1
 
 dependencies:
-  '@linzhe_tools/seamless-scroll': 1.0.4_vue@3.2.47
   '@vitejs/plugin-vue-jsx': 3.0.0_vite@3.2.5+vue@3.2.47
   dayjs: 1.11.7
+  linzhe_tools: 1.0.23_vue@3.2.47
   sass: 1.58.3
   typescript-plugin-css-modules: 4.2.2_typescript@4.9.5
   vue: 3.2.47
@@ -29,6 +30,7 @@ devDependencies:
   '@vitejs/plugin-vue': 3.2.0_vite@3.2.5+vue@3.2.47
   fast-glob: 3.2.12
   prettier: 2.8.4
+  tsconfig-paths: 4.2.0
   typescript: 4.9.5
   vite: 3.2.5_sass@1.58.3
   vite-plugin-svg-icons: 2.0.1_vite@3.2.5
@@ -393,8 +395,24 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: false
 
-  /@linzhe_tools/seamless-scroll/1.0.4_vue@3.2.47:
-    resolution: {integrity: sha512-DlW8aiEQKfKq4zI6R5Eoze+mEdJdLNlbofkqntds3dQ0bviTXWkpni0hbuq6wLly9TmjluxnaFEypUrs34ystQ==}
+  /@linzhe_tools/carousel/1.0.8_vue@3.2.47:
+    resolution: {integrity: sha512-mSrdAIVmsSAV9Uwb7lrKj6V46KNvWQQC5l7bxYNz279pLSwGpIUmYhf3M6iPB/MDWvNXS8kMj2mC4BNdXNBhYQ==}
+    peerDependencies:
+      vue: ^3.2.0
+    dependencies:
+      vue: 3.2.47
+    dev: false
+
+  /@linzhe_tools/number-scroll/1.0.8_vue@3.2.47:
+    resolution: {integrity: sha512-wsKFVNtWXeiFCFDveGJrPPYBPfbGhSDqsdba/MDNF+W9MXx8QakvSVarEJ0LAsgNv3pu2HI7KZ610eQcvP2DPg==}
+    peerDependencies:
+      vue: ^3.2.0
+    dependencies:
+      vue: 3.2.47
+    dev: false
+
+  /@linzhe_tools/seamless-scroll/1.0.15_vue@3.2.47:
+    resolution: {integrity: sha512-sS3TZB0gSR6Swc3GReiHrXC91TWrkeuiEYcXONJesEwHUQnVGpZ1rbccMMxtHKRVE6r59HVQ4QKUfiVqjr/gzw==}
     peerDependencies:
       vue: ^3.2.0
     dependencies:
@@ -1682,7 +1700,6 @@ packages:
     resolution: {integrity: sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==}
     engines: {node: '>=6'}
     hasBin: true
-    dev: false
 
   /jsonfile/6.1.0:
     resolution: {integrity: sha512-5dgndWOriYSm5cnYaJNhalLNDKOqFwyDB/rr1E9ZsGciGvKPs8R2xYGCacuf3z6K1YKDz182fd+fY3cn3pMqXQ==}
@@ -1739,6 +1756,16 @@ packages:
   /lilconfig/2.0.6:
     resolution: {integrity: sha512-9JROoBW7pobfsx+Sq2JsASvCo6Pfo6WWoUW79HuB1BCoBXD4PLWJPqDF6fNj67pqBYTbAHkE57M1kS/+L1neOg==}
     engines: {node: '>=10'}
+    dev: false
+
+  /linzhe_tools/1.0.23_vue@3.2.47:
+    resolution: {integrity: sha512-al+y/ALyoHQDIBzapSIgaQ2J8sQv+Rlb+D2se9Vuk2t8xK9fxBKJYsoRsGhi4eZcMron2GydzIbVWo8CWSCSkg==}
+    dependencies:
+      '@linzhe_tools/carousel': 1.0.8_vue@3.2.47
+      '@linzhe_tools/number-scroll': 1.0.8_vue@3.2.47
+      '@linzhe_tools/seamless-scroll': 1.0.15_vue@3.2.47
+    transitivePeerDependencies:
+      - vue
     dev: false
 
   /loader-utils/1.4.2:
@@ -2374,7 +2401,6 @@ packages:
   /strip-bom/3.0.0:
     resolution: {integrity: sha512-vavAMRXOgBVNF6nyEEmL3DBK19iRpDcoIwW+swQ+CbGiu7lju6t+JklA1MHweoWtadgt4ISVUsXLyDq34ddcwA==}
     engines: {node: '>=4'}
-    dev: false
 
   /stylus/0.59.0:
     resolution: {integrity: sha512-lQ9w/XIOH5ZHVNuNbWW8D822r+/wBSO/d6XvtyHLF7LW4KaCIDeVbvn5DF8fGCJAUCwVhVi/h6J0NUcnylUEjg==}
@@ -2494,14 +2520,13 @@ packages:
     resolution: {integrity: sha512-/y956gpUo9ZNCb99YjxG7OaslxZWHfCHAUUfshwqOXmxUIvqLjVO581BT+gM59+QV9tFe6/CGG53tsA1Y7RSdg==}
     dev: true
 
-  /tsconfig-paths/4.1.2:
-    resolution: {integrity: sha512-uhxiMgnXQp1IR622dUXI+9Ehnws7i/y6xvpZB9IbUVOPy0muvdvgXeZOn88UcGPiT98Vp3rJPTa8bFoalZ3Qhw==}
+  /tsconfig-paths/4.2.0:
+    resolution: {integrity: sha512-NoZ4roiN7LnbKn9QqE1amc9DJfzvZXxF4xDavcOWt1BPkdx+m+0gJuPM+S0vCe7zTJMYUP0R8pO2XMr+Y8oLIg==}
     engines: {node: '>=6'}
     dependencies:
       json5: 2.2.3
       minimist: 1.2.8
       strip-bom: 3.0.0
-    dev: false
 
   /tslib/2.5.0:
     resolution: {integrity: sha512-336iVw3rtn2BUK7ORdIAHTyxHGRIHVReokCR3XjbckJMK7ms8FysBfhLR8IXnAgy7T0PTPNBWKiH514FOW/WSg==}
@@ -2526,7 +2551,7 @@ packages:
       sass: 1.58.3
       source-map-js: 1.0.2
       stylus: 0.59.0
-      tsconfig-paths: 4.1.2
+      tsconfig-paths: 4.2.0
       typescript: 4.9.5
     transitivePeerDependencies:
       - supports-color

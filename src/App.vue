@@ -1,8 +1,13 @@
 <script setup lang="ts">
 import dayjs from "dayjs";
-import { onMounted, ref, computed } from "vue";
+import { onMounted, ref, computed, reactive, effect, watchEffect } from "vue";
 import SvgIcon from "./components/svgIcon/index.vue";
-import { SeamlessScroll } from "@linzhe_tools/seamless-scroll";
+import {
+  SeamlessScroll,
+  NumberScroll,
+  CarouselItem,
+  Carousel,
+} from "linzhe_tools";
 // import "./leetcode/tree/pathSum";
 // import "./leetcode/tree/isSameTree";
 // import "./leetcode/tree/isSymmetric";
@@ -13,8 +18,15 @@ import { SeamlessScroll } from "@linzhe_tools/seamless-scroll";
 // import "./leetcode/linkedList/reverseList";
 // import "./leetcode/hashTable/twoSum";
 // import "./leetcode/twoPointers/removeDuplicates";
-import "./leetcode/linkedList/addTwoNumbers";
-import "./leetcode/heap/minHeap";
+// import "./leetcode/linkedList/addTwoNumbers";
+// import "./leetcode/heap/minHeap";
+// import "./leetcode/tree/inorderTraversal";
+// import "./leetcode/tree/preorderTraversal";
+// import "./leetcode/tree/postorderTraversal";
+// import "./leetcode/tree/invertTree";
+// import "./leetcode/tree/isBalanced";
+// import "./leetcode/tree/find";
+import "./leetcode/tree/minDepth";
 // console.log(result);
 const num = ref(100);
 const time = ref(Date.now());
@@ -26,6 +38,11 @@ onMounted(() => {
     time.value = Date.now();
   }, 1000);
 });
+const arr = reactive({ foo: [1, 2, 3] });
+watchEffect(() => {
+  console.log("effect----->", JSON.stringify(arr.foo));
+});
+(window as any).arr = arr;
 </script>
 <template>
   <div>==</div>
@@ -54,6 +71,7 @@ onMounted(() => {
   </div>
   <div>
     <div>分步滚动</div>
+    <!--  -->
     <SeamlessScroll
       :height="108"
       :step-height="22"
@@ -67,6 +85,90 @@ onMounted(() => {
       <div style="line-height: 22px">55555555555555555555</div>
       <div style="line-height: 22px">66666666666666666666</div>
     </SeamlessScroll>
+  </div>
+  <div>{{ arr.foo }}</div>
+  <div>{{ arr }}</div>
+  <div style="width: 340px; height: 180px">
+    <Carousel>
+      <CarouselItem
+        ><div
+          style="
+            line-height: 180px;
+            text-align: center;
+            font-size: 40px;
+            color: #fff;
+            background-color: rgb(110, 46, 46);
+          "
+        >
+          1
+        </div></CarouselItem
+      >
+      <CarouselItem
+        ><div
+          style="
+            line-height: 180px;
+            text-align: center;
+            font-size: 40px;
+            color: #fff;
+            background-color: rgb(31, 97, 29);
+          "
+        >
+          2
+        </div></CarouselItem
+      >
+      <CarouselItem
+        ><div
+          style="
+            line-height: 180px;
+            text-align: center;
+            font-size: 40px;
+            color: #fff;
+            background-color: rgb(39, 176, 185);
+          "
+        >
+          3
+        </div></CarouselItem
+      >
+      <CarouselItem
+        ><div
+          style="
+            line-height: 180px;
+            text-align: center;
+            font-size: 40px;
+            color: #fff;
+            background-color: #ff0000;
+          "
+        >
+          4
+        </div></CarouselItem
+      >
+      <CarouselItem
+        ><div
+          style="
+            line-height: 180px;
+            text-align: center;
+            font-size: 40px;
+            color: #fff;
+            background-color: #cc00ff;
+          "
+        >
+          5
+        </div></CarouselItem
+      >
+      <CarouselItem
+        ><div
+          style="
+            line-height: 180px;
+            text-align: center;
+            font-size: 40px;
+            color: #fff;
+            background-color: #ff8800;
+          "
+        >
+          6
+        </div></CarouselItem
+      >
+    </Carousel>
   </div>
 </template>
 <style lang="scss" scoped>

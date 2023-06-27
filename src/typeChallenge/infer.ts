@@ -11,6 +11,7 @@ type Func<T> = T extends () => infer R ? R : boolean;
 let func1: Func<number>; // => boolean
 let func2: Func<"">; // => boolean
 let func3: Func<() => Promise<number>>; // => Promise<number>
+let func4: Func<() => 1> = 1;
 
 type Obj<T> = T extends { a: infer VType; b: infer VType } ? VType : number;
 let obj1: Obj<string>; // number
