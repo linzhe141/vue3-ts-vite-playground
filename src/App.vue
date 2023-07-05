@@ -26,7 +26,8 @@ import {
 // import "./leetcode/tree/invertTree";
 // import "./leetcode/tree/isBalanced";
 // import "./leetcode/tree/find";
-import "./leetcode/tree/minDepth";
+// import "./leetcode/tree/minDepth";
+import "./leetcode/tree/findMode";
 // console.log(result);
 const num = ref(100);
 const time = ref(Date.now());

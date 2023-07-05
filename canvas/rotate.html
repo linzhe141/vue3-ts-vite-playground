@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <canvas id="myCanvas" width="1000" height="1000"></canvas>
+    <script>
+      // 获取canvas元素和绘图上下文
+      const canvas = document.getElementById("myCanvas");
+      const ctx = canvas.getContext("2d");
+
+      const x = 100; // x坐标
+      const y = 100; // y坐标
+      const w = 50; // 宽度
+      const h = 50; // 高度
+      let angle = 0; // 自身旋转角度
+      const speed = -0.01; // 自身旋转速度
+
+      const ox = 300; // 围绕中心点x坐标
+      const oy = 300; // 围绕中心点y坐标
+      let theta = 0; // 围绕初始角度
+      const omega = 0.01; // 围绕旋转速度
+
+      function draw() {
+        // 清除画布
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // // 计算围绕中心点旋转后的新角度
+        theta += omega;
+        angle += speed;
+        // 中心点
+        // 初始的默认状态
+        ctx.save();
+        ctx.translate(ox, oy);
+        ctx.rotate(theta);
+        ctx.fillStyle = "red";
+        ctx.fillRect(-w / 2, -h / 2, w, h);
+        // 飞线
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.lineTo(x - ox, y - oy);
+        ctx.stroke();
+        // 恢复初始的默认状态
+        ctx.restore();
+
+        // 左上角点
+        // 又保存初始的默认状态
+        ctx.save();
+        // 首先左上角点，先要跟着(ox,oy)中心点旋转
+        ctx.translate(ox, oy);
+        ctx.rotate(theta);
+        // 然后左上角点，再跟着自己中心点旋转
+        ctx.translate(x - ox, y - oy);
+        ctx.rotate(angle);
+        ctx.fillStyle = "red";
+        ctx.fillRect(-w / 2, -h / 2, w, h);
+        // 又保存初始的默认状态
+        ctx.restore();
+      }
+
+      // 定义一个函数，用来重复调用绘制函数，实现动画效果
+      function animate() {
+        draw();
+        requestAnimationFrame(animate);
+      }
+
+      // 调用动画函数
+      animate();
+    </script>
+  </body>
+</html>
