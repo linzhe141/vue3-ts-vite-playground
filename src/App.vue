@@ -27,7 +27,9 @@ import {
 // import "./leetcode/tree/isBalanced";
 // import "./leetcode/tree/find";
 // import "./leetcode/tree/minDepth";
-import "./leetcode/tree/findMode";
+// import "./leetcode/tree/findMode";
+import "./leetcode/linkedList/LRU";
+import Test from "./Test.vue";
 // console.log(result);
 const num = ref(100);
 const time = ref(Date.now());
@@ -44,8 +46,13 @@ watchEffect(() => {
   console.log("effect----->", JSON.stringify(arr.foo));
 });
 (window as any).arr = arr;
+
+const x = reactive({ value: false });
+// @ts-ignore
+window.__x = x;
 </script>
 <template>
+  <Test :isFull="x" />
   <div>==</div>
   <p>伪元素svg</p>
   <div class="x"></div>

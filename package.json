@@ -11,7 +11,8 @@
   "dependencies": {
     "@vitejs/plugin-vue-jsx": "^3.0.0",
     "dayjs": "^1.11.7",
-    "linzhe_tools": "1.0.26",
+    "echarts": "^5.4.3",
+    "linzhe_tools": "1.0.30",
     "sass": "^1.57.1",
     "typescript-plugin-css-modules": "^4.1.1",
     "vue": "^3.2.41"
