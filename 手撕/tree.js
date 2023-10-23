@@ -16,7 +16,19 @@ var data = [
     name: "j",
   },
 ];
-
+function getNodeItemByName(data, name) {
+  for (var i = 0; i < data.length; i++) {
+    const item = data[i];
+    if (item.name === name) {
+      return item;
+    }
+    if (item.children && item.children.length) {
+      const target = getNodeItemByName(item.children, name);
+      if (target) return target;
+    }
+  }
+  return null;
+}
 function getNodeByName(data, name, result = []) {
   for (var i = 0; i < data.length; i++) {
     const item = data[i];
@@ -75,6 +87,7 @@ function toMap1(data) {
 //   ['a','b','c'],
 //   ['a','b','d','e']
 // ]
+// 理解较为麻烦
 function getTreePathNodes(tree, parentNode = null) {
   const result = [];
   if (!parentNode) {
@@ -92,19 +105,20 @@ function getTreePathNodes(tree, parentNode = null) {
   }
   return result;
 }
-// getTreePathNodes(data[0])
-function getTreePathNodes1(tree, parentNode = null, result = []) {
+
+// 更好理解
+function getTreePathNodesByLinzhe(node, parentNode = null, result = []) {
   if (!parentNode) {
-    tree.path = [tree];
+    node.path = [node.name];
   } else {
-    tree.path = [...parentNode.path, tree];
+    node.path = [...parentNode.path, node.name];
   }
-  if (!tree.children) {
-    result.push(tree.path);
+  if (!node.children) {
+    result.push(node.path);
   }
-  if (tree.children && tree.children.length) {
-    tree.children.forEach((item) => {
-      getTreePathNodes1(item, tree, result);
+  if (node.children && node.children.length) {
+    node.children.forEach((subNode) => {
+      getTreePathNodesByLinzhe(subNode, node, result);
     });
   }
   return result;
@@ -113,7 +127,7 @@ function getTreePathNodes1(tree, parentNode = null, result = []) {
 function getTreeArrPathNodes(data) {
   const result = [];
   data.forEach((item) => {
-    result.push({ name: item.name, data: getTreePathNodes1(item) });
+    result.push({ name: item.name, data: getTreePathNodesByLinzhe(item) });
   });
   return result;
 }
