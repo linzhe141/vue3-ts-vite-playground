@@ -7,7 +7,8 @@ import {
   NumberScroll,
   CarouselItem,
   Carousel,
-} from "linzhe_tools";
+  Watermark,
+} from "linzhe-tools";
 // import "./leetcode/tree/pathSum";
 // import "./leetcode/tree/isSameTree";
 // import "./leetcode/tree/isSymmetric";
@@ -66,17 +67,20 @@ window.__x = x;
   <p>==============</p>
   <NumberScroll :number-string="timeValue" />
   <p>=========</p>
-  <div>
-    <div>默认滚动</div>
-    <SeamlessScroll :height="108" style="background-color: #ccc">
-      <div style="line-height: 22px">11111111111111111111</div>
-      <div style="line-height: 22px">22222222222222222222</div>
-      <div style="line-height: 22px">33333333333333333333</div>
-      <div style="line-height: 22px">44444444444444444444</div>
-      <div style="line-height: 22px">55555555555555555555</div>
-      <div style="line-height: 22px">66666666666666666666</div>
-    </SeamlessScroll>
-  </div>
+  <Watermark text="xxxxxx">
+    <div>
+      <div>默认滚动</div>
+      <SeamlessScroll :height="108" style="background-color: #ccc">
+        <div style="line-height: 22px">11111111111111111111</div>
+        <div style="line-height: 22px">22222222222222222222</div>
+        <div style="line-height: 22px">33333333333333333333</div>
+        <div style="line-height: 22px">44444444444444444444</div>
+        <div style="line-height: 22px">55555555555555555555</div>
+        <div style="line-height: 22px">66666666666666666666</div>
+      </SeamlessScroll>
+    </div>
+  </Watermark>
+
   <div>
     <div>分步滚动</div>
     <!--  -->
@@ -100,78 +104,48 @@ window.__x = x;
     <Carousel>
       <CarouselItem
         ><div
-          style="
-            line-height: 180px;
-            text-align: center;
-            font-size: 40px;
-            color: #fff;
-            background-color: rgb(110, 46, 46);
-          "
+          class="carousel-display-content"
+          style="background-color: rgb(110, 46, 46)"
         >
           1
         </div></CarouselItem
       >
       <CarouselItem
         ><div
-          style="
-            line-height: 180px;
-            text-align: center;
-            font-size: 40px;
-            color: #fff;
-            background-color: rgb(31, 97, 29);
-          "
+          class="carousel-display-content"
+          style="background-color: rgb(31, 97, 29)"
         >
           2
         </div></CarouselItem
       >
       <CarouselItem
         ><div
-          style="
-            line-height: 180px;
-            text-align: center;
-            font-size: 40px;
-            color: #fff;
-            background-color: rgb(39, 176, 185);
-          "
+          class="carousel-display-content"
+          style="background-color: rgb(39, 176, 185)"
         >
           3
         </div></CarouselItem
       >
       <CarouselItem
         ><div
-          style="
-            line-height: 180px;
-            text-align: center;
-            font-size: 40px;
-            color: #fff;
-            background-color: #ff0000;
-          "
+          class="carousel-display-content"
+          style="background-color: #ff0000"
         >
           4
         </div></CarouselItem
       >
       <CarouselItem
         ><div
-          style="
-            line-height: 180px;
-            text-align: center;
-            font-size: 40px;
-            color: #fff;
-            background-color: #cc00ff;
-          "
+          class="carousel-display-content"
+          style="background-color: #cc00ff"
         >
           5
         </div></CarouselItem
       >
       <CarouselItem
         ><div
-          style="
-            line-height: 180px;
-            text-align: center;
-            font-size: 40px;
-            color: #fff;
-            background-color: #ff8800;
-          "
+          class="carousel-display-content"
+          style="background-color: #ff8800"
         >
           6
         </div></CarouselItem
@@ -201,5 +175,11 @@ window.__x = x;
   align-items: center;
   justify-content: space-between;
   padding: 3px 0;
+}
+.carousel-display-content {
+  line-height: 180px;
+  text-align: center;
+  font-size: 40px;
+  color: #fff;
 }
 </style>

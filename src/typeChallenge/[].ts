@@ -8,6 +8,8 @@ type X = {
 // 获取对象类型属性名的类型
 // 类似js的动态属性名
 type Name = X["name"];
+type T = keyof X; // "age" | "name"
+const t: T = "name";
 type W = X[keyof X]; // string | number | boolean
 // 遍历 结合对象类型定义使用
 type Y = {

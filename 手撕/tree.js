@@ -14,7 +14,6 @@ var data = [
   },
   {
     name: "j",
-    name: "b",
   },
 ];
 
@@ -130,3 +129,34 @@ function getFlatTreeArr(data, result = [], pid = -1) {
   return result;
 }
 getFlatTreeArr(data);
+
+var treeNodeList = [
+  { name: "b", pid: "a" },
+  { name: "c", pid: "b" },
+  { name: "d", pid: "b" },
+  { name: "a", pid: -1 },
+  { name: "e", pid: "d" },
+  { name: "f", pid: -1 },
+  { name: "g", pid: "f" },
+  { name: "h", pid: "f" },
+  { name: "i", pid: "f" },
+  { name: "j", pid: -1 },
+];
+
+function generateTree(data, result = []) {
+  const map = {};
+  for (const item of data) {
+    item.children = [];
+    map[item.name] = item;
+  }
+  for (const item of data) {
+    if (item.pid === -1) {
+      result.push(item);
+    }
+    if (map[item.pid]) {
+      map[item.pid].children.push(item);
+    }
+  }
+  return result;
+}
+generateTree(treeNodeList);
